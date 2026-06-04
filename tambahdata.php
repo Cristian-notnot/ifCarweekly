@@ -7,7 +7,7 @@
 </head>
 <body>
     <h2>Tambah Data Mahasiswa</h2>
-    <form action="mahasiswa.html" method="post" enctype="multipart/form-data">
+    <form action="mahasiswa.php" method="post" enctype="multipart/form-data">
     <table cellpadding="5px">
  <tr>
     <td><label for="nama">Nama</label></td>
