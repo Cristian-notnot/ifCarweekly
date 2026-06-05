@@ -1,25 +1,43 @@
 <?php
-// koneksi ke database
-$conn = mysqli_connect("localhost", "root", "root", "ifCarweekly");
-if($conn){
-    echo "koneksi berhasil";    
-}
 
-// query ambil data mahasiswa
-$query = mysqli_query($conn, "SELECT * FROM mahasiswa");
+   require "fungsi.php";
+   $qmahasiswa = "SELECT * FROM mahasiswa";
+   $mahasiswas = tampildata($qmahasiswa);
+
+   
+   
+
+//    if($koneksi){
+//     echo "koneksi berhasil";
+//    };
+
+    // $query = "SELECT * FROM mahasiswa";
+    // $result = mysqli_query($koneksi, $query);
+
+    //ambil data (fetch ) dari lemari
+    //mysqli_fetch_row
+    //mysqli_fetch_assoc
+    //mysqli_fetch_object
+    //mysqli_fetch_array
+
+    //mysqli_fetch_row
+//    while($mhs = mysqli_fetch_row($result)) 
+//     {
+//     var_dump($mhs);
+//     }
+    
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>data Mahasiswa Informatika 2026</title>
+    <title>Data Mahasiswa</title>
 </head>
 <body>
-    <h1>Informatika 2026</h1>
-
+    <H1>DATA Mahasiswa</H1>
+    
     <table border="1" cellspacing="0" cellpadding="10px">
         <tr>
             <td><a href="index.php">Home</a></td>
@@ -28,62 +46,47 @@ $query = mysqli_query($conn, "SELECT * FROM mahasiswa");
             <td><a href="mahasiswa.php">Data Mahasiswa</a></td>
         </tr>
     </table>
-
     <br>
-
+    <hr/>
     <h2>Data Mahasiswa</h2>
-    <a href="tambah_data.html">
+
+    <a href="ambahData.php">
         <button>Tambah Data</button>
     </a>
-    <table border="1" cellpadding="10px" cellspacing="0">
-    <tr>
-        <th>No</th>
-        <th>Nama</th>
-        <th>Nim</th>
-        <th>Jurusan</th>
-        <th>Email</th>
-        <th>No HP</th>
-        <th>Foto</th>
-    </tr>
-
+    
+    <table border="1" cellspacing="0" cellpadding="10px">
+        <tr>
+            <th>No</th>
+            <th>nama</th>
+             <th>NIM</th>
+            <th>Jurusan</th>
+             <th>Email</th>
+            <th>No. HP</th>
+            <th>foto</th>
+            <th>aksi</th>
+           
+        </tr>
     <?php
-    $no = 1;
-
-    while ($row = mysqli_fetch_assoc($query)):
+        $i =1;
+        foreach($mahasiswas as $mhs)
+    {
     ?>
         <tr>
-            <td align="center">
-                <?= $no++; ?>
-            </td>
-
-            <td>
-                <?= $row['nama']; ?>
-            </td>
-
-            <td>
-                <?= $row['nim']; ?>
-            </td>
-
-            <td>
-                <?= $row['jurusan']; ?>
-            </td>
-
-            <td>
-                <?= $row['email']; ?>
-            </td>
-
-            <td>
-                <?= $row['no_hp']; ?>
-            </td>
-
-            <td align="center">
-                <img src="assets/images/<?= $row['foto']; ?>" width="120px">
-            </td>
+            <td><?= $i?></td>
+            <td><?php echo $mhs["nama"]?></td>
+            <td><?= $mhs["nim"]?></td>
+            <td><?= $mhs["jurusan"]?></td>
+            <td><?= $mhs["email"]?></td>
+            <td><?= $mhs["no_hp"]?></td>
+            <td><img src="assets/images/<?= $mhs["foto"]?>" width ="80px" alt=""></td>
+            <td><a href="editdata.php"><button>Edit</button></a>
+            <a href="deletedata.php"><button>Delete</button></a></td>
         </tr>
+<?php
+$i++;
+    }
+?>
 
-    <?php endwhile; ?>
-
-</table>
-
+    </table>
 </body>
 </html>
