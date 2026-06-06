@@ -1,75 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        INFORMATIKA 2026
-    </title>
+    <title>Home — IfCarweekly</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
- <div id="box">
+<?php
+require_once __DIR__ . '/config.php';
+include __DIR__ . '/navbar.php';
+?>
 
-<div id="nav">
-    <h1>TEKNIK INFORMATIKA 202</h1>
-    <table  cellspacing="0" cellpadding="10px"  >
-        <tr>
-            <div class="navbar">
-            <a href="index.php">Home</a>
-            <a href="profile.php">Profile</a>
-            <a href="contact.php">Contact</a>
-            <a href="mahasiswa.php">Mahasiswa</a>
-</div>
-        </tr>
-    </table>
- </div>
-
-<div id="konten">
-    <h3>SAMBUTAN KAPRODI</h3>
-    <img src="assets/images/jerome_powell.jpeg" width="400px" >
-    <p>
-        <b>
-        Nama : Charly Agusta Cristiano <br>
-        Jabatan : kaprodi <br>
-        </b>
-        Deskripsi : Lorem ipsum dolor sit amet, 
-        consectetur adipisicing elit. 
-        Enim omnis praesentium quo maxime tenetur 
-        aliquid magni numquam <u><b>iusto ipsam,</b></u> in atque 
-        delectus quae. Minima facilis nam eos, fugiat 
-        quasi voluptates? <b>H<sub>2</sub>O 2<sup>2</sup></b>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum officia maiores, eligendi 
-        neque amet minima atque nesciunt doloremque illum omnis, quo assumenda provident, sit dolorem 
-        id. Sed quis distinctio soluta?
-    </p>
-
-    <a href="profile.php" >profile</a><br>
-    <a href="contact.php">contact</a><br>
-    <a href="https://youtube.com" target="_blank">Youtube</a>
-</div>
-
-<div id="kotak">
-    <div id="prestasi">
-<h2>Prestasi yang didapat</h2>
-<ul>
-    <li>kaprodi terbaik tahun 2024 - 2025</li>
-    <li>juara pelari ter kalcer se jawa tengah</li>
-</ul>
-
-</div>
-
-<div id="jabatan">
-<h2>Jabatan yang pernah dijabat</h2>
-<ul>
-    <li>Kaprodi teknik informatika</li>
-    <li>Dosen Pengampuh</li>
-    <li>kepala keluarga </li>
-</ul>
-</div>
-</div>
-    
+<div class="container">
+    <div class="card">
+        <div class="hero-section">
+            <div class="hero-image-wrap">
+                <img src="assets/images/jerome_powell.jpg"
+                     alt="Foto Dekan Charly Agusta Cristiano">
+            </div>
+            <div class="hero-content">
+                <span class="tag">Sambutan Dekan</span>
+                <h1>Charly Agusta Cristiano</h1>
+                <p class="jabatan">Dekan Fakultas Ilmu Komputer &nbsp;&middot;&nbsp; 2024–2025</p>
+                <p>
+                    Selamat datang di Fakultas Ilmu Komputer. Kami berkomitmen
+                    mencetak lulusan yang tidak hanya kompeten secara teknis, tetapi juga
+                    mampu berinovasi dan beradaptasi dengan perkembangan teknologi global.
+                </p>
+                <div class="hero-actions">
+                    <a href="profile.php"  class="btn btn-teal">Lihat Profile</a>
+                    <a href="contact.php"  class="btn btn-outline">Hubungi Kami</a>
+                    <a href="mahasiswa.php" class="btn btn-outline">Data Mahasiswa</a>
+                </div>
+            </div>
         </div>
+    </div>
+
+    <div class="info-grid">
+        <div class="info-box">
+            <h4>
+                <span class="icon">&#127942;</span>
+                Prestasi
+            </h4>
+            <ul>
+                <li>Kaprodi terbaik tahun 2024–2025</li>
+                <li>Juara pelari Kalcer tercepat se Jawa Tengah</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h4>
+                <span class="icon">&#128188;</span>
+                Jabatan
+            </h4>
+            <ul>
+                <li>Kaprodi Teknik Informatika</li>
+                <li>Dosen Pengampu Mata Kuliah</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h4>
+                <span class="icon">&#128218;</span>
+                Program Studi
+            </h4>
+            <ul>
+                <li>Informatika</li>
+                <li>Sistem Informasi</li>
+                <li>Artificial Intelligence</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
