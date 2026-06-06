@@ -1,6 +1,6 @@
 <?php
 
-   require "fungsi.php";
+   require_once __DIR__ . "/fungsi.php";
    $qmahasiswa = "SELECT * FROM mahasiswa";
    $mahasiswas = tampildata($qmahasiswa);
 
@@ -40,17 +40,19 @@
     
     <table border="1" cellspacing="0" cellpadding="10px">
         <tr>
-            <td><a href="index.php">Home</a></td>
-            <td><a href="profile.php">Profile</a></td>
-            <td><a href="contact.php">Contact</a></td>
-            <td><a href="mahasiswa.php">Data Mahasiswa</a></td>
+          <div class="navbar">
+             <a href="index.php">Home</a>
+             <a href="profile.php">Profile</a>
+             <a href="contact.php">Contact</a>
+             <a href="mahasiswa.php">Mahasiswa</a>
+</div>
         </tr>
     </table>
     <br>
     <hr/>
     <h2>Data Mahasiswa</h2>
 
-    <a href="ambahData.php">
+    <a href="tambahdata.php">
         <button>Tambah Data</button>
     </a>
     
@@ -63,7 +65,6 @@
              <th>Email</th>
             <th>No. HP</th>
             <th>foto</th>
-            <th>aksi</th>
            
         </tr>
     <?php
@@ -78,15 +79,19 @@
             <td><?= $mhs["jurusan"]?></td>
             <td><?= $mhs["email"]?></td>
             <td><?= $mhs["no_hp"]?></td>
-            <td><img src="assets/images/<?= $mhs["foto"]?>" width ="80px" alt=""></td>
-            <td><a href="editdata.php"><button>Edit</button></a>
-            <a href="deletedata.php"><button>Delete</button></a></td>
-        </tr>
+            <td>
+            <a href="editdata.php?id=<?= $mhs['id'] ?>">
+            <button>Edit</button>
+            </a>
+
+            <a href="deletedata.php?id=<?= $mhs['id'] ?>">
+            <button>Delete</button>
+            </a>
+            </td>
 <?php
 $i++;
     }
 ?>
-
-    </table>
+    
 </body>
 </html>

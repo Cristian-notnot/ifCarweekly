@@ -1,5 +1,5 @@
-```php
 <?php
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 // Koneksi Database
 $conn = mysqli_connect("localhost", "root", "root", "ifcarweekly");
@@ -35,6 +35,12 @@ if(!move_uploaded_file($tmp, $dirUpload . $foto)){
     die("Upload foto gagal");
 }
 
+// Pastikan AUTO_INCREMENT sinkron dengan nilai id tertinggi
+$nextIdResult = mysqli_query($conn, "SELECT IFNULL(MAX(id),0)+1 AS next_id FROM mahasiswa");
+$nextIdRow = mysqli_fetch_assoc($nextIdResult);
+$nextId = $nextIdRow['next_id'] ?? 1;
+mysqli_query($conn, "ALTER TABLE mahasiswa AUTO_INCREMENT = {$nextId}");
+
 // Prepared Statement
 $stmt = mysqli_prepare(
     $conn,
@@ -58,17 +64,20 @@ mysqli_stmt_bind_param(
     $foto
 );
 
-$insert = mysqli_stmt_execute($stmt);
+try {
+    $insert = mysqli_stmt_execute($stmt);
+} catch (mysqli_sql_exception $e) {
+    echo "Gagal menyimpan data: " . $e->getMessage();
+    exit;
+}
 
 if($insert){
     header("Location: mahasiswa.php");
     exit;
-}else{
-    echo "Gagal menyimpan data : " . mysqli_error($conn);
 }
 
 mysqli_stmt_close($stmt);
 mysqli_close($conn);
 
 ?>
-```
+

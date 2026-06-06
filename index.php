@@ -4,29 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        TEKNIK INFORMATIKA UNIMUS 2026
+        INFORMATIKA 2026
     </title>
-    <link rel="stylesheet" href="assets/css/style_index.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
  <div id="box">
 
 <div id="nav">
-    <h1>TEKNIK INFORMATIKA UNIMUS 2026</h1>
+    <h1>TEKNIK INFORMATIKA 202</h1>
     <table  cellspacing="0" cellpadding="10px"  >
         <tr>
-            <td><a href="index.php">Home</a></td>
-            <td><a href="profile.php">Profile</a></td>
-            <td><a href="contact.php">Contact</a></td>
-            <td><a href="mahasiswa.php">Data Mahasiswa</a></td>
+            <div class="navbar">
+            <a href="index.php">Home</a>
+            <a href="profile.php">Profile</a>
+            <a href="contact.php">Contact</a>
+            <a href="mahasiswa.php">Mahasiswa</a>
+</div>
         </tr>
     </table>
  </div>
 
 <div id="konten">
     <h3>SAMBUTAN KAPRODI</h3>
-    <img src="assets/images/kaprodi.jpeg" width="400px" >
+    <img src="assets/images/jerome_powell.jpeg" width="400px" >
     <p>
         <b>
         Nama : Charly Agusta Cristiano <br>
