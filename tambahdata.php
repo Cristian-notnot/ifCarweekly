@@ -42,14 +42,14 @@ include __DIR__ . '/navbar.php';
                     <td>Email</td>
                     <td>
                         <input type="email" name="email"
-                               placeholder="contoh@email.com" maxlength="20">
+                               placeholder="contoh: nama@gmail.com" maxlength="100">
                     </td>
                 </tr>
                 <tr>
                     <td>No HP</td>
                     <td>
                         <input type="tel" name="no_hp"
-                               placeholder="08xxxxxxxxxx" maxlength="13">
+                               placeholder="contoh: 08xxxxxxxxxx" maxlength="13">
                     </td>
                 </tr>
                 <tr>

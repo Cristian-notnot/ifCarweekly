@@ -70,6 +70,10 @@ include __DIR__ . '/navbar.php';
                 <li>Informatika</li>
                 <li>Sistem Informasi</li>
                 <li>Artificial Intelligence</li>
+                <li>Software Engineering</li>
+                <li>Data Science & AI</li>
+                <li>Cybersecurity</li>
+                <li>IoT & Embedded System</li>
             </ul>
         </div>
     </div>

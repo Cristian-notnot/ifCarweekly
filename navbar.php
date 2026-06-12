@@ -1,7 +1,6 @@
 <?php
 // =============================================================
 // navbar.php — Navigasi Reusable
-// Cara pakai: <?php include __DIR__ . '/navbar.php'; ?>
 // =============================================================
 $currentPage = basename($_SERVER['PHP_SELF']);
 $navLinks = [
@@ -15,7 +14,7 @@ $navLinks = [
     <nav class="navbar" id="mainNav">
         <a href="index.php" class="nav-brand">
             <span class="nav-brand-icon">&#9670;</span>
-            <?= APP_NAME ?>
+            Fakultas Ilmu Komputer
         </a>
         <ul class="nav-links" id="navLinks">
             <?php foreach ($navLinks as $href => $label): ?>

@@ -20,7 +20,7 @@ define('ALLOWED_EXT',  ['jpg', 'jpeg', 'png', 'gif', 'webp']);
 define('MAX_FILE_SIZE', 2 * 1024 * 1024); // 2 MB
 
 // --- Nama Aplikasi ---
-define('APP_NAME', 'Fakultas Ilmu Komputer');
+define('APP_NAME', 'Fakultas Ilmu Komputer dan Teknologi Digital');
 
 // --- Timezone ---
 date_default_timezone_set('Asia/Jakarta');
